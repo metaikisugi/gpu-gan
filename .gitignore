@@ -1,0 +1,13 @@
+﻿@'
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+
+# datasets / outputs (DO NOT PUSH)
+data/
+runs/
+
+# model weights
+*.pt
+*.pth
