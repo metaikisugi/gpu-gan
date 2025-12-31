@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train DCGAN (FFHQ64)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/train_dcgan.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--data_dir", "${workspaceFolder}/data/ffhq-64x64/images",
+        "--outdir", "${workspaceFolder}/runs/dcgan_ffhq64",
+        "--epochs", "20",
+        "--batch", "128",
+        "--amp"
+      ]
+    },
+    {
+      "name": "Generate DCGAN (latest ckpt)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/generate.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--ckpt", "${workspaceFolder}/runs/dcgan_ffhq64/ckpt/step_0010500.pt",
+        "--out", "${workspaceFolder}/runs/dcgan_ffhq64/gen.png",
+        "--n", "64"
+      ]
+    }
+  ]
+}
